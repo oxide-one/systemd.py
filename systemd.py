@@ -8,7 +8,7 @@ res = attr('reset')
 iso_color = fg('#dd5892') + attr("bold")
 systemd_color = fg('#118111') + bg('#000000')
 systemd_version = "239"
-
+curdir = os.getcwd()
 reset = attr('reset')
 clear = lambda: os.system('clear')
 
@@ -16,11 +16,12 @@ def init():
     global units
     global hooks
     global mounts
-    hooks = [line.rstrip('\n') for line in open('hooks')]
-    units = [line.rstrip('\n') for line in open('units')]
+    hooks = [line.rstrip('\n') for line in open(curdir + '/hooks')]
+    units = [line.rstrip('\n') for line in open(curdir + '/units')]
 
 def early_start():
     print(":: running early hook [udev]")
+    print(curdir)
     time.sleep(1)
     print("starting version " + systemd_version)
     print(":: running early hook [initiso_system]")
