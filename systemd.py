@@ -21,7 +21,6 @@ def init():
 
 def early_start():
     print(":: running early hook [udev]")
-    print(curdir)
     time.sleep(1)
     print("starting version " + systemd_version)
     print(":: running early hook [initiso_system]")
