@@ -6,7 +6,7 @@ from colored import fg, bg, attr
 
 res = attr('reset')
 iso_color = fg('#dd5892') + attr("bold")
-systemd_color = fg('#118111') + bg('#000000')
+systemd_color = fg('#118111')
 systemd_version = "239"
 curdir = os.path.realpath(__file__)[:-10]
 reset = attr('reset')
